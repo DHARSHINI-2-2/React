@@ -1,22 +1,29 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  
-  return (
-    <>
-      <div style={{width:400}}>
-          <p class="bg-amber-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam laborum autem fugiat aliquam optio ducimus qui ipsam cum voluptatum quae sapiente, nam a dignissimos quaerat quis excepturi nihil ad ullam voluptas deserunt possimus ab perspiciatis repellendus. Omnis ea magnam, quo, soluta repellendus qui perferendis molestias corrupti veritatis ipsam officia iusto.</p><br />
-          <p class="bg-emerald-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti nostrum alias dignissimos pariatur consectetur temporibus sed id maxime omnis quos.</p><br />
-          <p style={{background:"blue"}}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, consequatur?</p>
-          <p></p>
-          <p></p>
+  const [num1,setNum1]=useState("")
+  const [num2,setNum2]=useState("")
+
+  const a=Number(num1)
+  const b=Number(num2)
+
+  return(
+    <div>
+      <h1 style={{textDecoration:"underline"}}>Calculator</h1>
+      <input type="number" placeholder='enter number1' 
+      onChange={(e)=>setNum1(e.target.value)}/>
+      <input type="number" placeholder='enter number2' 
+      onChange={(e)=>setNum2(e.target.value)}/>
+      <div style={{height:"200px", width:"350px", border:"1px solid", margin:"20px 465px", background:"lightblue"}}>
+        <h4>Result:</h4>
+        <p><strong>Addition:</strong>{a+b}</p>
+        <p><strong>Subtraction:</strong>{a-b}</p>
+        <p><strong>Multiplication:</strong>{a*b}</p>
+        <p><strong>Division:</strong>{b==0 ? "cannot divide by 0" : a/b}</p>
       </div>
-      
-    </>
-  )
+    </div>
+ )
 }
 
 export default App
